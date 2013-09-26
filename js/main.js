@@ -16,16 +16,10 @@ function getStuff()
 		});
 }
 
-var info = function(data)
-	{
-		$("#information").append("Length: "+ data.length);
-		
-		data.forEach(function(entry)
-			{
-				$("#information").append("<li>: "+ entry.a);
-				
-			});
-	}
+function displayPlayer(lastname)
+{
+	$("#playerPic").html("<img src='img/players/"+lastname+".jpg'>");
+}
 
 function getPlayerData(player)
 {
@@ -46,7 +40,7 @@ function getPlayerData(player)
 				console.log(data.length);
 				data.forEach(function(entry)
 					{
-						console.log(entry)
+						console.log(entry);
 					});
 			}
 	});	
