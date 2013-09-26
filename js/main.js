@@ -27,31 +27,36 @@ var info = function(data)
 			});
 	}
 
+function getPlayerData(player)
+{
+	$.ajax({
+		//url:'https://sirgalahad88:pablopablo@api.delicious.com/v1/posts/all',
+		//url: 'http://feeds.delicious.com/v2/json/sirgalahad88?count=50',
+		url: 'http://feeds.delicious.com/v2/json/sirgalahad88/'+player,
+		type: "GET",
+		dataType: 'jsonp',
+		error: function(error) 
+			{
+				console.log(error);
+				console.log("Error: "+error.statusText);
+				
+			},
+		success: function(data) 
+			{
+				console.log(data.length);
+				data.forEach(function(entry)
+					{
+						console.log(entry)
+					});
+			}
+	});	
+}
 
 
 $(document).ready(function()
 	{
-		var key ='dj0yJmk9Tk1nSkdPTlM3NDNCJmQ9WVdrOVJrOXZSV1V6TkhNbWNHbzlNVGt6TURVeU5qRTJNZy0tJnM9Y29uc3VtZXJzZWNyZXQmeD03Yg';
-		$.ajax({
-			//url:'https://sirgalahad88:pablopablo@api.delicious.com/v1/posts/all',
-			url: 'http://feeds.delicious.com/v2/json/sirgalahad88?count=50',
-			type: "GET",
-			dataType: 'jsonp',
-			error: function(error) 
-				{
-					console.log(error);
-					console.log(error.statusText);
-					
-				},
-			success: function(data) 
-				{
-					console.log(data.length);
-					data.forEach(function(entry)
-						{
-							console.log(entry)
-						});
-				}
-		});
+		
+		
 	}
 );
 
