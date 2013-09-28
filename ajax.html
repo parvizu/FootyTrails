@@ -1,6 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<link href="css/bootstrap.css" type="text/css" rel="stylesheet"/>  
+<link href="css/bootstrap.css" type="text/css" rel="stylesheet"/> 
+<link href="css/styles.css" type="text/css" rel="stylesheet"/>  
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Untitled Document</title>
@@ -12,12 +13,26 @@
 
 <body>
 
+
 	<a href="" onclick="getPlayerData('Ronaldo'); return false;" class="btn btn-danger btn-large">Cristiano Ronaldo</a>
     <a href="" onclick="getPlayerData('Messi'); return false;" class="btn btn-danger btn-large">Lionel Messi</a>
-    <a href="" onclick="getPlayerData('Ozil'); return false;" class="btn btn-danger btn-large">Mesut Ozil</a>
+    <a href="" onclick="getPlayerData('Iniesta'); return false;" class="btn btn-danger btn-large">Andres Iniesta</a>
     <div id="information">
     
     </div>
 
+	<div id="playerInfo">
+    	<div id="playerPic"></div>
+        <div id="playerDetails">
+        	<ul>
+                <li><h5>Name:</h5><span id="playerName"></span></li>
+                <li><h5>Position:</h5> <span id="playerPosition"></span>
+                <li><h5>Current Team:</h5> <span id="playerCurrentTeam"></span>
+            </ul>
+        </div>
+        <div id="playerHistory"></div>
+        
+        
+    </div>
 </body>
 </html>

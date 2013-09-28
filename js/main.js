@@ -1,5 +1,6 @@
 // JavaScript Document
 
+
 function getPlayerData(player)
 {
 	$.ajax({
@@ -24,8 +25,8 @@ function getPlayerData(player)
 				console.log(data.length);
 				data.forEach(function(entry)
 					{
-					
-					var i;
+				
+						var i;
 						for(i=0;i<entry.t.length;i++){
 								if(entry.t[i].charAt(0)=="$"){
 										last_name=entry.t[i].split(" ",2)[1];
