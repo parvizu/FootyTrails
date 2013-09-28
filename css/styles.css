@@ -1,0 +1,19 @@
+@charset "UTF-8";
+/* CSS Document */
+
+#playerDetails, h5, #playerInfo, #playerPic
+{
+	display: inline-block;	
+}
+
+#playerInfo img
+{
+	border-radius:5px;	
+	vertical-align:top;
+	
+}
+
+#playerInfo
+{
+	display:none;	
+}

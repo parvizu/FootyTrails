@@ -16,10 +16,18 @@ function getStuff()
 		});
 }
 
-function displayPlayer(lastname)
+
+//Function used to display the information and history of the player in the HTML
+function displayPlayer(player)
 {
-	$("#playerPic").html("<img src='img/players/"+lastname+".jpg'>");
+	$("#playerInfo").show();
+	$("#playerPic").html("<img src='img/players/"+player.lastname+".jpg'>");
+	$("#playerName").text(player.lastname);
+	
 }
+
+
+
 
 function getPlayerData(player)
 {
