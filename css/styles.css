@@ -1,19 +1,126 @@
 @charset "UTF-8";
 /* CSS Document */
 
-#playerDetails, h5, #playerInfo, #playerPic
+div
 {
-	display: inline-block;	
+	display:inline-block;	
 }
 
-#playerInfo img
+img 
 {
 	border-radius:5px;	
-	vertical-align:top;
-	
 }
 
 #playerInfo
 {
 	display:none;	
+	vertical-align:top;
+	padding: 20px;
 }
+
+#playerPic img
+{
+	height:240px;
+	border-top-right-radius:0px;
+	border-bottom-right-radius:0px;	
+	border-top: solid thin #D5D5D5;
+	border-left: solid thin #D5D5D5;
+	border-bottom: solid thin #D5D5D5;
+}
+
+#playerDetails
+{
+	background-color:#369;	
+	color:#FFF;
+	padding:5px;
+	width:400px;
+	height:230px;
+	border-top-right-radius:5px;
+	border-bottom-right-radius:5px;
+	border-top: solid thin #D5D5D5;
+	border-right: solid thin #D5D5D5;
+	border-bottom: solid thin #D5D5D5;
+}
+
+#firstName
+{
+	font-size:20px;	
+	margin: 0px;
+	color:#C0C0C0;
+}
+
+#lastName
+{
+	font-size:80px;	
+	margin: 0px;
+	margin-bottom:25px;
+	text-shadow: 3px 3px #000;
+}
+
+#playerPic
+{
+	float: left;
+	padding:0px;
+}
+
+#playerDetails h5
+{
+	display: inline-block;	
+	margin:0px;
+}
+
+#playerShortHistory
+{
+	/*background-color:#999;*/
+	padding:5px;
+	display:inline-block;
+	width:95%;
+		
+}
+
+#playerShortHistory h3
+{
+	display:inline-block;	
+}
+
+
+#playerHistory img, .currentTeam
+{
+	padding:10px;
+	background-color:#FFF;	
+	border: solid thin #D5D5D5;
+}
+
+.team
+{
+	background-color: #ECECEC;
+	padding:5px;
+	margin: 10px;
+	border-radius:5px;
+	display:block;
+}
+
+.teamInfo
+{
+	min-width:250px;
+	width: 400px;	
+}
+
+.shortLogo
+{
+	width:50px;
+	height:50px;
+	margin-left:10px;
+	margin-right:10px;
+	
+		
+}
+
+.shortHistTeam
+{
+	border-radius:25px;
+	height:50px;
+	border: solid thin #D5D5D5;
+	
+}
+
