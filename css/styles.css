@@ -67,6 +67,7 @@ img
 {
 	display: inline-block;	
 	margin:0px;
+	margin-right:5px;
 }
 
 #playerShortHistory
@@ -112,15 +113,22 @@ img
 	height:50px;
 	margin-left:10px;
 	margin-right:10px;
-	
-		
 }
 
 .shortHistTeam
 {
 	border-radius:25px;
 	height:50px;
-	border: solid thin #D5D5D5;
-	
+	border: solid thin #D5D5D5;	
+}
+
+.detailsInput
+{
+	margin-right:10px;	
+}
+
+.otherPlayers
+{
+	margin:5px;
 }
 
