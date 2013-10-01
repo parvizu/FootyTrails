@@ -37,14 +37,14 @@ function displayHistory(history)
 		hcode = "<div class='team' id='"+history[key].t_name.replace(' ','_')+"'>";
 		hcode+="<div class='teamLogo'><img src='img/teams/"+history[key].t_name+".jpg'></div>";
 		
-		hcode+= "<div class='teamInfo'><h5>"+history[key].t_name+"</h5><ul><li>URL:<a class='teamUrl' target='_blank' href='"+history[key].url+"'>"+history[key].url+"</a></li><li>Other players:</li></div>";
+		hcode+= "<div class='teamInfo'><h5>"+history[key].t_name+"</h5><ul><li>URL:<a class='teamUrl' target='_blank' href='"+history[key].url+"'>"+history[key].url+"</a></li><li>Other players:</li> <span id='"+history[key].t_name.replace(' ','')+"Players'></span></div>";
 		
 		
 		hcode+= "</div>";		
 		hist.append(hcode);
 		
 		//TEST
-		teamplayers(history[key].t_name);
+		//teamplayers(history[key].t_name);
 		
 	}
 	
@@ -53,6 +53,7 @@ function displayHistory(history)
 	for (var keys in history)
 	{
 		var encoded = encodeURIComponent("#"+history[keys].t_name);
+		teamplayers(encoded);
 	}
 	
 }
@@ -61,7 +62,6 @@ function displayHistory(history)
 var teamplayers = function(team)
 {
 	//console.log(team);
-	this.players={};
 	$.ajax({
 		url: 'http://feeds.delicious.com/v2/json/sirgalahad88/'+team,
 		type: 'GET',
@@ -73,7 +73,7 @@ var teamplayers = function(team)
 			},
 		success: function(data)
 			{
-				//console.log(data);
+				console.log(data);
 				data.forEach(function(entry)
 				{	
 					for(var i = 0; i<entry.t.length;i++)
@@ -82,9 +82,11 @@ var teamplayers = function(team)
 						//console.log(tag);
 						if (tag.search("-")!=-1)
 						{
+							console.log(team);
 							var lastname = tag.substring(-(tag.length-2),tag.length-2);
-							var t = new GetPlayerName(lastname);
-							players[lastname]=t;
+							$("#"+team.replace("%20","").replace("%23","")+"Players").append("<a class='btn btn-primary btn-small otherPlayers' onclick='getPlayerData(\""+lastname+"\")'>"+lastname+"</a>");
+							//var t = new GetPlayerName(lastname);
+							//players[lastname]=t;
 						}
 						
 					}
