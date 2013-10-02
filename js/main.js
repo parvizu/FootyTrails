@@ -39,6 +39,8 @@ function toggleTeam(teamid)
 	console.log(teamid);	
 }
 
+player_names={};
+
 function displayPlayer(player)
 {
 	console.log(player);
@@ -196,6 +198,8 @@ function getPlayerData(player)
 				var current_team="";
 				var player_url = "";
 				var history={};
+				var nationality="";
+				var league="";
 				var jsonPlayer=new Object();
 					//console.log(data.length);
 					
@@ -211,6 +215,14 @@ function getPlayerData(player)
 								last_name=entry.t[i].split(" ",2)[1];
 								first_name=entry.t[i].split(" ",2)[0].substr(1);
 							}
+							if(entry.t[i].charAt(0)=="&")
+								{
+								nationality=entry.t[i].substr(1);
+								}
+							if(entry.t[i].indexOf("Lg_")==0)
+								{
+								league=entry.t[i].substr(3);
+								}
 						}
 						//console.log(entry);
 					});
@@ -260,7 +272,9 @@ function getPlayerData(player)
 						"l_name":last_name,
 						"current_team":current_team,
 						"history":history,
-						"player_url": player_url	
+						"player_url": player_url,
+						"country":nationality,
+						"league":league
 						};
 				displayPlayer(jsonPlayer);
 			}
@@ -271,13 +285,68 @@ function getPlayerData(player)
 
 $(document).ready(function()
 	{
+
 		$("#historyToggle").hover( 
 			function(){ $(this).addClass('')},
 			function(){ $(this).removeClass('')});
 		
-	}
-);
-
-
 	
+		$.ajax({
+			url: 'http://feeds.delicious.com/v2/json/tags/sirgalahad88',
+			type: "GET",
+			dataType: 'jsonp',
+			error: function(error) 
+				{
+					console.log(error);
+					console.log("Error: "+error.statusText);
+					
+				},
+			success: function(data) 
+				{
+				//console.log(data);
+				var last_name={};
+				var first_name={};
+				var names={};
+					for(var key in data)
+						{
+						if(key.charAt(0)=='$')
+							{
+							if(key.indexOf(' ')!= -1)
+								{
+								last_name=key.split(" ",2)[1];
+								first_name=key.split(" ",2)[0].substr(1);
+								names[last_name]=first_name;
+								}
+							else
+								{
+								last_name=key.substr(1);
+								first_name=last_name;
+								names[last_name]=first_name;
+								}
+							}
+						}
+					loadPlayerPics(names);
+					
+				}		
+			});
+		
+		function loadPlayerPics(names)
+			{
+			for(var key in names)
+				{
+				var link='<a href="" onclick="getPlayerData('+key+'); return false;" <div class="player-pic"> <img src="img/players/'+key+'.jpg" alt="player pic" id="'+key+'"> <p class="caption">'+key+'</p></div></a>';
+				$("#selection").append(link);
+				}
+			player_names=names;
+			//console.log(player_names);
+			}
+		$(".livepreview").livePreview({
+				 	viewWidth: 500,  
+				    viewHeight: 500,  
+				    targetWidth: 1000,  
+				    targetHeight: 800,   
+				    offset: 50,
+				    position: 'right'		
+			});
+	});
 	
