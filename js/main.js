@@ -210,8 +210,15 @@ function getPlayerData(player)
 							if(entry.t[i].charAt(0)=="$")
 							{
 								player_url = entry.u;
-								last_name=entry.t[i].split(" ",2)[1];
-								first_name=entry.t[i].split(" ",2)[0].substr(1);
+								if(entry.t[i].indexOf(" ")!=-1){
+									last_name=entry.t[i].split(" ",2)[1];
+									first_name=entry.t[i].split(" ",2)[0].substr(1);
+								}
+								else
+								{
+									last_name=entry.t[i].substr(1);
+									first_name=" ";
+								}
 							}
 							if(entry.t[i].charAt(0)=="&")
 								{
@@ -285,6 +292,10 @@ function getPlayerData(player)
 $(document).ready(function()
 	{
 
+		//$('.carousel').carousel({
+			//  interval: 2000
+			//});
+
 		$("#historyToggle").hover( 
 			function(){ $(this).addClass('')},
 			function(){ $(this).removeClass('')});
@@ -319,7 +330,7 @@ $(document).ready(function()
 							else
 								{
 								last_name=key.substr(1);
-								first_name=last_name;
+								first_name=" ";
 								names[last_name]=first_name;
 								}
 							}
@@ -333,7 +344,7 @@ $(document).ready(function()
 			{
 			for(var key in names)
 				{
-				var link='<a href="" onclick="getPlayerData('+key+'); return false;" <div class="player-pic"> <img src="img/players/'+key+'.jpg" alt="player pic" id="'+key+'"> <p class="caption">'+key+'</p></div></a>';
+				var link='<a href="" onclick="getPlayerData(\''+key+'\'); return false;" <div class="player-pic"> <img src="img/players/'+key+'.jpg" alt="player pic" id="'+key+'"> <p class="caption">'+key+'</p></div></a>';
 				$("#selection").append(link);
 				}
 			player_names=names;
@@ -347,5 +358,6 @@ $(document).ready(function()
 				    offset: 50,
 				    position: 'right'		
 			});
+			
 	});
 	
