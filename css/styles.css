@@ -2,14 +2,8 @@
 /* CSS Document */
 
 /*CHALENGE*/
-#selection {    
-  display:inline-block;
-    margin: 2px 3px;
-    border: 1px solid #ccc;
-    padding: 10px;
-}
 
-.player-pic {
+/*.player-pic {
     float: left;
     margin:10px 2px 0px 0px;
     border: #ccc solid 1px;
@@ -20,12 +14,37 @@
     height:140px;
     width: 120px;
 }
-
+*/
+header{
+	text-align: center;
+	color:#369;
+}
+header h2{
+	font-weight: 900;
+}
 .caption {
-  margin: 0 0 2px;
-  text-align: center;
+  margin:0 auto;
+  width:85px;
 }
 
+body {
+	font-size: 14px;
+	font-family: Helvetica, 'Arial', sans-serif;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+	height: auto;
+	background:#ececec;
+}
+
+.toggle li:first-child a {-webkit-border-radius: 4px 0 0 4px; -moz-border-radius: 4px 0 0 4px; -o-border-radius: 4px 0 0 4px; border-radius: 4px 0 0 4px;}
+.toggle li a:hover { background: #ededed; color: #222; }
+.toggle li a.active { background: #c8e0f3; color: #325874; cursor: default; box-shadow: inset 0 0 3px rgba(0,0,0,0.4); -moz-box-shadow: inset 0 0 3px rgba(0,0,0,0.4); -webkit-box-shadow: inset 0 0 3px rgba(0,0,0,0.4); }
+
+.slider { margin: 50px 0 10px!important;}
+#carousel li {margin-right: 5px;}
+#carousel img {display: block; opacity: .5; cursor: pointer;}
+#carousel img:hover {opacity: 1;}
+#carousel .flex-active-slide img {opacity: 1; cursor: default;}
 
 
 
@@ -34,21 +53,24 @@
 #container
 {
 	width:1000px;
-	margin: 0px auto;
+	margin: 0 auto;
+	border:thick solid #369;
+	border-radius: 10px;
+	background-color: white;
 }
 
-div
+/*div
 {
 	display:inline-block;	
 }
-
+*/
 
 
 #playerInfo
 {
 	display:none;	
 	vertical-align:top;
-	margin: 20px;
+	margin: 0 auto;
 	padding:0px;
 	width:600px;
 	box-shadow:3px 3px 5px 6px #ccc;
@@ -73,6 +95,7 @@ div
 
 #playerDetails
 {
+	display:inline-block;	
 	background-color:#369;	
 	color:#FFF;
 	padding:5px;
