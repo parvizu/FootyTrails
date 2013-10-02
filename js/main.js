@@ -1,5 +1,46 @@
 // JavaScript Document
+
+function historyToggle()
+{
+	var state = $("#playerHistory").css("display");
+	console.log(state);
+	if (state =='none')
+	{
+		$(".teamData").show();
+	}
+	$("#playerHistory").slideToggle(400);
+}
+
+function historyShortToggle()
+{
+	var state = $("#playerHistory").css("display");
+	
+	$(".teamData").slideToggle(300);
+	if (state =='none')
+	{
+		$("#playerHistory").slideToggle(400);
+	}
+	
+}
+
+function historyClose()
+{
+	var state = $("#playerHistory").css("display");
+	console.log(state);
+	if (state !='none')
+	{
+		$("#playerHistory").slideUp(400);
+	}
+}
+
+function toggleTeam(teamid)
+{
+	$("#"+teamid).slideToggle(300);
+	console.log(teamid);	
+}
+
 player_names={};
+
 function displayPlayer(player)
 {
 	console.log(player);
@@ -10,13 +51,7 @@ function displayPlayer(player)
 	$("#firstName").text(player["f_name"]);
 	$("#lastName").text(player["l_name"]);
 	$("#currentTeam").text(player["current_team"]);
-	//$("#playerDetails").css("background
-	//$("#playerTeam").html("<img class='currentTeam' src='img/teams/"+player['current_team']+".jpg'>");
 	
-	/*
-	$("#playerDetails").html('<ul><li><h5>Name:</h5> '+player["f_name"]+" "+player["l_name"]+'</li><li><h5>Current Team:</h5> '+player["current_team"]+'</li><li><h5>Profile:</h5><a target="_blank" href="'+player["player_url"]+'">'+player["player_url"]+'</a></li></ul>');
-	
-	*/
 	var history = player["history"];
 	console.log(history);
 	displayHistory(history);
@@ -32,19 +67,21 @@ function displayHistory(history)
 	var hcode;
 	for (var key in history)
 	{
+		//Add small logos to the short list in the player description
 		$("#playerShortHistory").append("<span class='shortLogo'><img class='shortHistTeam' src='img/teams/"+history[key].t_name+".jpg'></span>");
 		
-		hcode = "<div class='team' id='"+history[key].t_name.replace(' ','_')+"'>";
+		
+		hcode = "<div class='team' id='"+history[key].t_name.replace(' ','_')+"'><h4 onclick=\"toggleTeam('t_"+history[key].t_name.replace(' ','_')+"')\">"+key+".  "+history[key].t_name+"</h4>";
+		hcode += "<div id='t_"+history[key].t_name.replace(' ','_')+"' class='teamData'>";
 		hcode+="<div class='teamLogo'><img src='img/teams/"+history[key].t_name+".jpg'></div>";
 		
-		hcode+= "<div class='teamInfo'><h5>"+history[key].t_name+"</h5><ul><li>URL:<a class='teamUrl' target='_blank' href='"+history[key].url+"'>"+history[key].url+"</a></li><li>Other players:</li> <span id='"+history[key].t_name.replace(' ','')+"Players'></span></div>";
+		hcode+= "<div class='teamInfo'><ul><li><span class='label'> URL :</span><a class='teamUrl' target='_blank' href='"+history[key].url+"'>"+history[key].url+"</a></li>";
+		hcode+= "<li><span class='label'> League :</span></li> "
+		hcode+= "<li><span class='label'> Players :</span></li>";
 		
 		
-		hcode+= "</div>";		
+		hcode+= "<li> <div id='"+history[key].t_name.replace(' ','')+"Players'></div></li></div>";		
 		hist.append(hcode);
-		
-		//TEST
-		//teamplayers(history[key].t_name);
 		
 	}
 	
@@ -84,9 +121,7 @@ var teamplayers = function(team)
 						{
 							console.log(team);
 							var lastname = tag.substring(-(tag.length-2),tag.length-2);
-							$("#"+team.replace("%20","").replace("%23","")+"Players").append("<a class='btn btn-primary btn-small otherPlayers' onclick='getPlayerData(\""+lastname+"\")'>"+lastname+"</a>");
-							//var t = new GetPlayerName(lastname);
-							//players[lastname]=t;
+							$("#"+team.replace("%20","").replace("%23","")+"Players").append("<a class='btn btn-primary btn-small otherPlayersBtn' onclick='getPlayerData(\""+lastname+"\")'>"+lastname+"</a>");
 						}
 						
 					}
@@ -250,6 +285,12 @@ function getPlayerData(player)
 
 $(document).ready(function()
 	{
+
+		$("#historyToggle").hover( 
+			function(){ $(this).addClass('')},
+			function(){ $(this).removeClass('')});
+		
+	
 		$.ajax({
 			url: 'http://feeds.delicious.com/v2/json/tags/sirgalahad88',
 			type: "GET",
