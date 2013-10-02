@@ -1,28 +1,41 @@
 @charset "UTF-8";
 /* CSS Document */
 
+#container
+{
+	width:1000px;
+	margin: 0px auto;
+}
+
 div
 {
 	display:inline-block;	
 }
 
-img 
-{
-	border-radius:5px;	
-}
+
 
 #playerInfo
 {
 	display:none;	
 	vertical-align:top;
-	padding: 20px;
+	margin: 20px;
+	padding:0px;
+	width:600px;
+	box-shadow:3px 3px 5px 6px #ccc;
+	border-radius:5px;
+	background-color:#369;
+	text-align:left;
 }
 
 #playerPic img
 {
 	height:240px;
-	border-top-right-radius:0px;
-	border-bottom-right-radius:0px;	
+	border-top-left-radius:5px;
+}
+
+#playerPic 
+{
+	border-top-left-radius:5px;
 	border-top: solid thin #D5D5D5;
 	border-left: solid thin #D5D5D5;
 	border-bottom: solid thin #D5D5D5;
@@ -33,14 +46,22 @@ img
 	background-color:#369;	
 	color:#FFF;
 	padding:5px;
-	width:400px;
+	width:403px;
 	height:230px;
 	border-top-right-radius:5px;
-	border-bottom-right-radius:5px;
 	border-top: solid thin #D5D5D5;
 	border-right: solid thin #D5D5D5;
 	border-bottom: solid thin #D5D5D5;
 }
+
+#playerHistory
+{
+	border: solid 1px #D5D5D5;	
+	width:99%;
+	display:none;
+	border-radius:3px;
+}
+
 
 #firstName
 {
@@ -70,13 +91,38 @@ img
 	margin-right:5px;
 }
 
+#shortHistory
+{
+	background-color:#517693;
+	padding:5px;
+	margin:0px;
+	width: 588px;	
+	border-right: solid thin #D5D5D5;
+	border-left: solid thin #D5D5D5;
+	padding-bottom:20px;
+	border-bottom-right-radius:5px;
+	border-bottom-left-radius:5px;
+	
+}
+
+
+
+#shortHistory h5:hover
+{
+	cursor:pointer;
+	class		
+}
+
+#historyMenu
+{
+	margin-bottom:5px;
+		
+}
+
 #playerShortHistory
 {
-	/*background-color:#999;*/
 	padding:5px;
-	display:inline-block;
-	width:95%;
-		
+	display:inline-block;	
 }
 
 #playerShortHistory h3
@@ -84,6 +130,12 @@ img
 	display:inline-block;	
 }
 
+
+#playerHistory img
+{
+	border-radius:5px;
+	vertical-align:super;
+}
 
 #playerHistory img, .currentTeam
 {
@@ -96,15 +148,38 @@ img
 {
 	background-color: #ECECEC;
 	padding:5px;
-	margin: 10px;
-	border-radius:5px;
 	display:block;
+	border-top: solid thin #CDCDCD;
+}
+
+.team h4
+{
+	text-align:left;	
+	color: black;
+	margin:5px;
+}
+
+.team h4:hover
+{
+	cursor:pointer;	
+}
+
+.teamData
+{
+	border-top: solid thin #DDD;
+	padding:5px;
+	width:95%;	
+}
+
+.team:nth-child(even)
+{
+	background-color: #FFF;	
 }
 
 .teamInfo
 {
 	min-width:250px;
-	width: 400px;	
+	/*width: 400px;	*/
 }
 
 .shortLogo
@@ -127,8 +202,18 @@ img
 	margin-right:10px;	
 }
 
-.otherPlayers
+.otherPlayersBtn
 {
 	margin:5px;
 }
 
+li 
+{
+	list-style-type:none;
+	margin-bottom:5px;	
+}
+
+.label
+{
+	margin-right:10px;	
+}
