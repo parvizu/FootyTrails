@@ -8,7 +8,7 @@
   <link href="css/livepreview-demo.css" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />  
 
-  <title>FootyTrails</title>
+  <title>Footy Trails</title>
 
   <script src="js/jquery-1.10.2.min.js"></script>
   <script language="javascript" type="application/javascript" src="js/main.js"></script>
@@ -19,16 +19,16 @@
 
 <body>
   <header>
-    <h2>FootyTrails</h2>
-  </header>
-	<div id="container">
-      <div class="flexslider carousel" >
+    <h1>FootyTrails</h1>
+    <div class="flexslider carousel" >
           <ul class="slides">
            
           </ul>
-      </div>    
-
-	 <div id="playerInfo">
+      </div>
+  </header>
+	<div id="container">
+          
+		 <div id="playerInfo">
     	<div id="playerPic"></div>
         <div id="playerDetails">
     
@@ -44,6 +44,9 @@
                 <div class="btn btn-default" onclick="historyShortToggle(); return false;">Single Team History</div>
                 <div class="btn btn-default" onclick="historyClose(); return false;">Close History</div>
        		</div>
+            <div class="btn-group btn-group-justified btn-group-xs" id="historyMenu2">
+            	<a  target="_blank" class="btn btn-warning" href="" id="playerTransfer">Transfermarkt Profile</a>
+            </div>
         	<div id="playerHistory"></div>
       </div>
     </div>

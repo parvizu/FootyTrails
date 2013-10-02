@@ -1,25 +1,24 @@
 // JavaScript Document
-
 function historyToggle()
 {
 	var state = $("#playerHistory").css("display");
-	if (state =='none')
-	{
-		$(".teamData").show();
-	}
-	$("#playerHistory").slideToggle(400);
+	$(".teamData").show();
+	
+		$("#playerHistory").show(400);
+
+	
 }
 
 function historyShortToggle()
 {
 	var state = $("#playerHistory").css("display");
-	
+
 	$(".teamData").slideToggle(300);
 	if (state =='none')
 	{
 		$("#playerHistory").slideToggle(400);
 	}
-	
+
 }
 
 function historyClose()
@@ -30,6 +29,7 @@ function historyClose()
 		$("#playerHistory").slideUp(400);
 	}
 }
+
 
 function toggleTeam(teamid)
 {
@@ -50,9 +50,13 @@ function displayPlayer(player)
 	$("#currentTeam").text(player["current_team"]);
 	$("#nationality").text(player["country"]);
 	
+	
 	var history = player["history"];
 	console.log(history);
 	displayHistory(history);
+	
+	$("#playerTransfer").attr("href",player["player_url"]);
+	console.log(player);
 	
 	
 }

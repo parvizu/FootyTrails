@@ -18,9 +18,16 @@
 header{
 	text-align: center;
 	color:#369;
+	
 }
-header h2{
-	font-weight: 900;
+
+header div
+{
+	display: block;	
+}
+
+header h1{
+	color: #FFF;
 }
 .caption {
   margin:0 auto;
@@ -33,7 +40,8 @@ body {
 	-webkit-font-smoothing: antialiased;
 	text-rendering: optimizeLegibility;
 	height: auto;
-	background:#ececec;
+	background:url(../img/Soccer-Field.jpg);
+	background-size:cover;
 }
 
 .toggle li:first-child a {-webkit-border-radius: 4px 0 0 4px; -moz-border-radius: 4px 0 0 4px; -o-border-radius: 4px 0 0 4px; border-radius: 4px 0 0 4px;}
@@ -54,23 +62,23 @@ body {
 {
 	width:1000px;
 	margin: 0 auto;
-	border:thick solid #369;
+	/*border:thick solid #369;
 	border-radius: 10px;
-	background-color: white;
+	background-color: white;*/
 }
 
-/*div
+
+div 
 {
-	display:inline-block;	
+	display: inline-block;
 }
-*/
-
 
 #playerInfo
 {
 	display:none;	
 	vertical-align:top;
-	margin: 0 auto;
+	/*margin: 0 auto;*/	
+	margin: 20px;
 	padding:0px;
 	width:600px;
 	box-shadow:3px 3px 5px 6px #ccc;
@@ -79,9 +87,15 @@ body {
 	text-align:left;
 }
 
+#historyMenu
+{
+	vertical-align:top;	
+}
+
 #playerPic img
 {
 	height:240px;
+	width:185px;
 	border-top-left-radius:5px;
 }
 
