@@ -16,6 +16,11 @@ Ramit Malhotra. Role: backend programming and api
 Chalenge Masekera: player menu,frontend programing, and debugging.
 Pablo Arvizu: main frontend development and design, debugging, and api.
 
+Technologies used:
+
+API - Delicious
+Carousel - FlexSlider (woothemes.com/flexslider)
+
 Link to demo:
 
 <a href="http://people.ischool.berkeley.edu/~parvizu/iolab2013/memex/footytrails.html"> Footy Trails</a>
