@@ -1,29 +1,31 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<link href="css/bootstrap.css" type="text/css" rel="stylesheet"/> 
-<link href="css/styles.css" type="text/css" rel="stylesheet"/>  
-<link href="css/livepreview-demo.css" rel="stylesheet" type="text/css">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />                                                  
-<title>Untitled Document</title>
-</head>
-<!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> -->
-<script src="js/jquery-1.10.2.min.js"></script>
-<script language="javascript" type="application/javascript" src="js/main.js"></script>
-<script type="text/javascript" src="js/jquery-live-preview.min.js"></script>
+  <!-- Demo CSS -->
+    <link rel="stylesheet" href="css/demo.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
+    <link href="css/bootstrap.css" type="text/css" rel="stylesheet"/> 
+    <link href="css/styles.css" type="text/css" rel="stylesheet"/>  
 
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />                                                  
+    <title>Untitled Document</title>
+</head>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="js/jquery-1.10.2.min.js"></script>
   
 <body>
+      <section class="slider">
+        <div class="flexslider carousel">
+          <ul class="slides">
+            <li><a href="" onclick="getPlayerData('Iniesta'); return false;"> <div class="player-pic"> <img src="img/players/Iniesta.jpg" alt="player pic"id="Iniesta"> <p class="caption">Iniesta</p></div></a></li>
+            <li><a href="" onclick="getPlayerData('Ronaldo'); return false;"> <div class="player-pic"> <img src="img/players/Ronaldo.jpg" alt="player pic" id="Ronaldo"> <p class="caption">Ronaldo</p></div></a></li>
+            <li><a href="" onclick="getPlayerData('Messi'); return false;"> <div class="player-pic"> <img src="img/players/Messi.jpg" alt="player pic" id="Messi"> <p class="caption">Messi</p></div></a></li>
 
-
-	<a href="" onclick="getPlayerData('Ronaldo'); return false;" class="btn btn-danger btn-large">Cristiano Ronaldo</a>
-    <a href="" onclick="getPlayerData('Messi'); return false;" class="btn btn-danger btn-large">Lionel Messi</a>
-    <a href="" onclick="getPlayerData('Iniesta'); return false;" class="btn btn-danger btn-large">Andres Iniesta</a>
-    <a href="" onclick="getPlayerData('Ozil'); return false;" class="btn btn-danger btn-large">Mesut Ozil</a>
-    <a href="" onclick="getPlayerData('Falcao'); return false;" class="btn btn-danger btn-large">Radamel Falcao</a>
-    <div id="information">
+          </ul>
+        </div>
+      </section>
     
-    </div>
+    <div id="information"> </div>
 
 	<div id="playerInfo">
     	<h3></h3>
@@ -44,5 +46,30 @@
         
         
     </div>
+  <!-- jQuery -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="js/jquery-1.10.2.min.js">\x3C/script>')</script>
+
+  <!-- FlexSlider -->
+  <script defer src="js/flexslider.js"></script>
+
+  <script type="text/javascript">
+    $(function(){
+      SyntaxHighlighter.all();
+    });
+    $(window).load(function(){
+      $('.flexslider').flexslider({
+        animation: "slide",
+        animationLoop: false,
+        itemWidth: 210,
+        itemMargin: 5,
+        pausePlay: true,
+        start: function(slider){
+          $('body').removeClass('loading');
+        }
+      });
+    });
+  </script>
+
 </body>
 </html>

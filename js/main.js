@@ -250,6 +250,7 @@ function getPlayerData(player)
 
 $(document).ready(function()
 	{
+		$('.carousel').carousel();
 		$.ajax({
 			url: 'http://feeds.delicious.com/v2/json/tags/sirgalahad88',
 			type: "GET",
