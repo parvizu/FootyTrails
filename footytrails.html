@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />                                                  
+
+  <link href="css/bootstrap.css" type="text/css" rel="stylesheet"/> 
+  <link href="css/styles.css" type="text/css" rel="stylesheet"/>  
+  <link href="css/livepreview-demo.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />  
+
+  <title>FootyTrails</title>
+
+  <script src="js/jquery-1.10.2.min.js"></script>
+  <script language="javascript" type="application/javascript" src="js/main.js"></script>
+  <script defer src="js/jquery.flexslider.js"></script>
+  <script type="text/javascript" src="js/jquery-live-preview.min.js"></script>
+
+</head>
+
+<body>
+  <header>
+    <h2>FootyTrails</h2>
+  </header>
+	<div id="container">
+      <div class="flexslider carousel" >
+          <ul class="slides">
+           
+          </ul>
+      </div>    
+
+	 <div id="playerInfo">
+    	<div id="playerPic"></div>
+        <div id="playerDetails">
+    
+        		<h3 id="firstName"></h3>
+                <h1 id="lastName"></h1>
+                <h5><span class="label">Team :</span></h5> <span id="currentTeam" class="detailsInput"></span><h5><span class="label">Nationality :</span></h5> <span id="nationality" class="detailsInput"></span>
+                <h4><span class="label">Player History:</span></h4> <span id="playerShortHistory" class="well well-small"></span>
+        </div>
+         
+    	<div id="shortHistory">
+        	<div class="btn-group btn-group-justified btn-group-xs" id="historyMenu">
+        		<div class="btn btn-default" onclick="historyToggle(); return false;">Full Team History</div>
+                <div class="btn btn-default" onclick="historyShortToggle(); return false;">Single Team History</div>
+                <div class="btn btn-default" onclick="historyClose(); return false;">Close History</div>
+       		</div>
+        	<div id="playerHistory"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

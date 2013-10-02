@@ -73,7 +73,7 @@ function displayHistory(history)
 		hcode += "<div id='t_"+history[key].t_name.replace(' ','_')+"' class='teamData'>";
 		hcode+="<div class='teamLogo'><img src='img/teams/"+history[key].t_name+".jpg'></div>";
 		
-		hcode+= "<div class='teamInfo'><ul><li><span class='label'> URL :</span><a class='teamUrl' target='_blank' href='"+history[key].url+"'>"+history[key].url+"</a></li>";
+		hcode+= "<div class='teamInfo'><ul><li><span class='label'> URL :</span><a class='livepreview teamUrl' target='_blank' href='"+history[key].url+"'>"+history[key].url+"</a></li>";
 		hcode+= "<li><span class='label'> League :</span><span class=\"detailsInput\">"+history[key].league+"</li> ";
 		hcode+= "<li><span class='label'> Players :</span></li>";
 		
@@ -291,10 +291,7 @@ function getPlayerData(player)
 
 $(document).ready(function()
 	{
-
-		//$('.carousel').carousel({
-			//  interval: 2000
-			//});
+		$(".slides").html('<img src="img/icon_loading.gif" /> Now loading...');
 
 		$("#historyToggle").hover( 
 			function(){ $(this).addClass('')},
@@ -344,12 +341,12 @@ $(document).ready(function()
 			{
 			for(var key in names)
 				{
-				var link='<a href="" onclick="getPlayerData(\''+key+'\'); return false;" <div class="player-pic"> <img src="img/players/'+key+'.jpg" alt="player pic" id="'+key+'"> <p class="caption">'+key+'</p></div></a>';
-				$("#selection").append(link);
+				var link='<li><a href="" onclick="getPlayerData(\''+key+'\'); return false;"> <img src="img/players/'+key+'.jpg" alt="player pic" id="'+key+'" width="245" height="250"><p class="caption">'+key+'</p></a></li>';
+				$(".slides").append(link);
 				}
 			player_names=names;
-			//console.log(player_names);
 			}
+
 		$(".livepreview").livePreview({
 				 	viewWidth: 500,  
 				    viewHeight: 500,  
@@ -360,4 +357,25 @@ $(document).ready(function()
 			});
 			
 	});
+$(window).load(function(){
+      $('.flexslider').flexslider({
+        animation: "slide",
+        animationLoop: false,
+        itemWidth: 200,
+        itemMargin: 5,
+        pausePlay: false,
+        randomize:true,
+        controlNav:false,
+        pauseOnHover:true,
+        slideshowSpeed:3000,
+        prevText:"",
+        nextText:"",
+        minItems:2,
+        maxItems:5,
+        move:1,
+        start: function(slider){
+          $('body').removeClass('loading');
+        }
+      });
+    });
 	
