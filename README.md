@@ -18,7 +18,7 @@ Pablo Arvizu: main frontend development and design, debugging, and api.
 
 Link to demo:
 
-footyTrails.html
+<a href="http://people.ischool.berkeley.edu/~parvizu/iolab2013/memex/footytrails.html"> Footy Trails</a>
 
 Known bugs:
 
