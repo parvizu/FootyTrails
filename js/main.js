@@ -3,7 +3,6 @@
 function historyToggle()
 {
 	var state = $("#playerHistory").css("display");
-	console.log(state);
 	if (state =='none')
 	{
 		$(".teamData").show();
@@ -26,7 +25,6 @@ function historyShortToggle()
 function historyClose()
 {
 	var state = $("#playerHistory").css("display");
-	console.log(state);
 	if (state !='none')
 	{
 		$("#playerHistory").slideUp(400);
@@ -35,15 +33,14 @@ function historyClose()
 
 function toggleTeam(teamid)
 {
-	$("#"+teamid).slideToggle(300);
-	console.log(teamid);	
+	$("#"+teamid).slideToggle(300);	
 }
 
 player_names={};
 
 function displayPlayer(player)
 {
-	console.log(player);
+	//console.log(player);
 	
 	$("#playerInfo").show();
 	$("#playerPic").html("<img src='img/players/"+player["l_name"]+".jpg'>");
@@ -51,6 +48,7 @@ function displayPlayer(player)
 	$("#firstName").text(player["f_name"]);
 	$("#lastName").text(player["l_name"]);
 	$("#currentTeam").text(player["current_team"]);
+	$("#nationality").text(player["country"]);
 	
 	var history = player["history"];
 	console.log(history);
@@ -76,7 +74,7 @@ function displayHistory(history)
 		hcode+="<div class='teamLogo'><img src='img/teams/"+history[key].t_name+".jpg'></div>";
 		
 		hcode+= "<div class='teamInfo'><ul><li><span class='label'> URL :</span><a class='teamUrl' target='_blank' href='"+history[key].url+"'>"+history[key].url+"</a></li>";
-		hcode+= "<li><span class='label'> League :</span></li> "
+		hcode+= "<li><span class='label'> League :</span><span class=\"detailsInput\">"+history[key].league+"</li> ";
 		hcode+= "<li><span class='label'> Players :</span></li>";
 		
 		
@@ -219,10 +217,7 @@ function getPlayerData(player)
 								{
 								nationality=entry.t[i].substr(1);
 								}
-							if(entry.t[i].indexOf("Lg_")==0)
-								{
-								league=entry.t[i].substr(3);
-								}
+							
 						}
 						//console.log(entry);
 					});
@@ -255,12 +250,17 @@ function getPlayerData(player)
 										team_name=entry.t[i].substr(1);
 										//console.log(team_name);
 									}
+									if(entry.t[i].indexOf("Lg_")==0)
+									{
+										league=entry.t[i].substr(3);
+									}
 								}
 								team_url=entry.u;
 								history[num]={
 										"t_name":team_name,
 										"url":team_url,
-										"tag":"#"+team_name
+										"tag":"#"+team_name,
+										"league":league
 										
 									};
 							}
@@ -273,8 +273,7 @@ function getPlayerData(player)
 						"current_team":current_team,
 						"history":history,
 						"player_url": player_url,
-						"country":nationality,
-						"league":league
+						"country":nationality
 						};
 				displayPlayer(jsonPlayer);
 			}
