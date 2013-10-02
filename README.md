@@ -1,4 +1,4 @@
-memex
+FootyTrails
 =====
 
 IO Lab Porject 1
@@ -12,13 +12,13 @@ Simple trail displayer for the teams that soccer players have played for through
 
 Team members:
 
-Ramit Malhotra. Role: backend programming and api
-Chalenge Masekera: player menu,frontend programing, and debugging.
-Pablo Arvizu: main frontend development and design, debugging, and api.
+Ramit Malhotra. Role: backend programming and api<br>
+Chalenge Masekera: player menu,frontend programing, and debugging.<br>
+Pablo Arvizu: main frontend development and design, debugging, and api.<br>
 
 Technologies used:
 
-API - Delicious
+API - Delicious<br>
 Carousel - FlexSlider (woothemes.com/flexslider)
 
 Link to demo:
