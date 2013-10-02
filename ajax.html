@@ -1,8 +1,6 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <link href="css/bootstrap.css" type="text/css" rel="stylesheet"/> 
 <link href="css/styles.css" type="text/css" rel="stylesheet"/>  
-<link href="css/livepreview-demo.css" rel="stylesheet" type="text/css">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />                                                  
 <title>Untitled Document</title>
@@ -10,20 +8,23 @@
 <!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> -->
 <script src="js/jquery-1.10.2.min.js"></script>
 <script language="javascript" type="application/javascript" src="js/main.js"></script>
-<script type="text/javascript" src="js/jquery-live-preview.min.js"></script>
 
   
 <body>
 
-
-	<a href="" onclick="getPlayerData('Ronaldo'); return false;" class="btn btn-danger btn-large">Cristiano Ronaldo</a>
-    <a href="" onclick="getPlayerData('Messi'); return false;" class="btn btn-danger btn-large">Lionel Messi</a>
-    <a href="" onclick="getPlayerData('Iniesta'); return false;" class="btn btn-danger btn-large">Andres Iniesta</a>
-    <a href="" onclick="getPlayerData('Ozil'); return false;" class="btn btn-danger btn-large">Mesut Ozil</a>
-    <a href="" onclick="getPlayerData('Falcao'); return false;" class="btn btn-danger btn-large">Radamel Falcao</a>
-    <div id="information">
+    <nav id="selection">
+        <a href="" onclick="getPlayerData('Iniesta'); return false;" <div class="player-pic"> <img src="img/players/Iniesta.jpg" alt="player pic" id="Iniesta"> <p class="caption">Iniesta</p></div></a>
+        <a href="" onclick="getPlayerData('Ronaldo'); return false;" <div class="player-pic"> <img src="img/players/Ronaldo.jpg" alt="player pic" id="Ronaldo"> <p class="caption">Ronaldo</p></div></a>
+        <a href="" onclick="getPlayerData('Messi'); return false;" <div class="player-pic"> <img src="img/players/Messi.jpg" alt="player pic" id="Messi"> <p class="caption">Messi</p></div></a>
+        <a href="" onclick="getPlayerData('Ozil'); return false;" <div class="player-pic"> <img src="img/players/Ozil.jpg" alt="player pic" id="Ozil"> <p class="caption">Ozil</p></div></a>
+        <a href="" onclick="getPlayerData('Cavani'); return false;" <div class="player-pic"> <img src="img/players/Cavani.jpg" alt="player pic" id="Cavani"> <p class="caption">Cavani</p></div></a>
+        <a href="" onclick="getPlayerData('Mata'); return false;" <div class="player-pic"> <img src="img/players/Mata.jpg" alt="player pic" id="Mata"> <p class="caption">Mata</p></div></a>
+        <a href="" onclick="getPlayerData('Rooney'); return false;" <div class="player-pic"> <img src="img/players/Rooney.jpg" alt="player pic" id="Rooney"> <p class="caption">Rooney</p></div></a>
+        <a href="" onclick="getPlayerData('Bale'); return false;" <div class="player-pic"> <img src="img/players/Bale.jpg" alt="player pic" id="Bale"> <p class="caption">Bale</p></div></a>
+        <a href="" onclick="getPlayerData('Falcao'); return false;" <div class="player-pic"> <img src="img/players/Falcao.jpg" alt="player pic" id="Falcao"> <p class="caption">Falcao</p></div></a>
+    </nav>
     
-    </div>
+    <div id="information"> </div>
 
 	<div id="playerInfo">
     	<h3></h3>
