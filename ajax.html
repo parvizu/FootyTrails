@@ -12,35 +12,36 @@
 
   
 <body>
-
+	<div id="container">
 
 	<a href="" onclick="getPlayerData('Ronaldo'); return false;" class="btn btn-danger btn-large">Cristiano Ronaldo</a>
     <a href="" onclick="getPlayerData('Messi'); return false;" class="btn btn-danger btn-large">Lionel Messi</a>
     <a href="" onclick="getPlayerData('Iniesta'); return false;" class="btn btn-danger btn-large">Andres Iniesta</a>
     <a href="" onclick="getPlayerData('Ozil'); return false;" class="btn btn-danger btn-large">Mesut Ozil</a>
     <a href="" onclick="getPlayerData('Falcao'); return false;" class="btn btn-danger btn-large">Radamel Falcao</a>
-    <div id="information">
-    
-    </div>
 
 	<div id="playerInfo">
-    	<h3></h3>
     	<div id="playerPic"></div>
         <div id="playerDetails">
     
         		<h3 id="firstName"></h3>
                 <h1 id="lastName"></h1>
-                <h5><span class="label">Team:</span></h5> <span id="currentTeam" class="detailsInput"></span><h5><span class="label">Nationality:</span></h5> <span id="nationality" class="detailsInput"></span>
+                <h5><span class="label">Team :</span></h5> <span id="currentTeam" class="detailsInput"></span><h5><span class="label">Nationality :</span></h5> <span id="nationality" class="detailsInput"></span>
                 <h4><span class="label">Player History:</span></h4> <span id="playerShortHistory" class="well well-small"></span>
 
             
          	
  		 </div>
          
-    
-        <div id="playerHistory"></div>
-        
-        
+    	<div id="shortHistory">
+        	<div class="btn-group btn-group-justified btn-group-xs" id="historyMenu">
+        		<div class="btn btn-default" onclick="historyToggle(); return false;">Full Team History</div>
+                <div class="btn btn-default" onclick="historyShortToggle(); return false;">Single Team History</div>
+                <div class="btn btn-default" onclick="historyClose(); return false;">Close History</div>
+       		</div>
+        	<div id="playerHistory"></div>
+        </div>
+    </div>
     </div>
 </body>
 </html>
