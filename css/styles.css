@@ -1,6 +1,36 @@
 @charset "UTF-8";
 /* CSS Document */
 
+/*CHALENGE*/
+#selection {    
+  display:inline-block;
+    margin: 2px 3px;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.player-pic {
+    float: left;
+    margin:10px 2px 0px 0px;
+    border: #ccc solid 1px;
+    border-radius: 10px 10px 10px 10px
+}
+
+.player-pic img {
+    height:140px;
+    width: 120px;
+}
+
+.caption {
+  margin: 0 0 2px;
+  text-align: center;
+}
+
+
+
+
+/*REST*/
+
 #container
 {
 	width:1000px;
@@ -216,4 +246,12 @@ li
 .label
 {
 	margin-right:10px;	
+}
+
+
+.playerCarousel
+{
+	width: 400px;
+	display:block;
+	heigth: 200px;	
 }
